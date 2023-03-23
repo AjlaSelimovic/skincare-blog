@@ -12,6 +12,8 @@ try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     echo "Connected successfully";
 
+    //sql to delete record
+   // $sql="DELETE FROM admin WHERE id_admin=3"
 } catch (PDOException $e) {
 
     echo "Connection failed:" .$e -> getMessage();
