@@ -12,7 +12,7 @@ try {
     // set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $sql = "INSERT INTO admin(id_admin, username, password)
-    VALUES('4','tryAdmin','tryingInsert')";
+    VALUES('5','tryAdmin2','tryingInsert2')";
     $conn->exec($sql);
     echo "New record has been created, check the db to see";
 
