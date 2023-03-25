@@ -64,7 +64,7 @@
 	<body>
 		
 	<div class="fh5co-loader"></div>
-	
+																	<!--NAVBAR SECTION-->
 	<div id="page">
 	<nav class="fh5co-nav" role="navigation">
 		<div class="container-fluid">
@@ -74,30 +74,16 @@
 						<div class="row">
 							<div class="col-sm-7 text-left menu-1">
 								<ul>
-									<li class="active"><a href="index.html">Home</a></li>
-									<li><a href="blog.html">Lifestyle</a></li>
-									<li class="has-dropdown">
-										<a href="blog.html">Blog</a>
-										<!--Na blogu imaju kategorije pa nam ovaj dropdown menu i ne treba u sustini-->
-										
-										<!-- <ul class="dropdown">
-											<li><a href="#">Web Design</a></li>
-											<li><a href="#">eCommerce</a></li>
-											<li><a href="#">Branding</a></li>
-											<li><a href="#">API</a></li>
-										</ul> -->
-									
-									</li>
-									<li><a href="about.html">About</a></li>
-									<li><a href="contact.html">Contact</a></li>
+									<li><a class="active" href="#home">Home</a></li>
+									<li><a href="#products">Popular Products</a></li>
+									<li><a href="blog.html">Blog</a></li>
+									<li><a href="#about">About</a></li>
+									<li><a href="#contact">Contact</a></li>
 								</ul>
 							</div>
 							<div class="col-sm-5">
 								<ul class="fh5co-social-icons">
-									<li><a href="#"><i class="icon-twitter-with-circle"></i></a></li>
-									<li><a href="#"><i class="icon-facebook-with-circle"></i></a></li>
-									<li><a href="#"><i class="icon-linkedin-with-circle"></i></a></li>
-									<li><a href="#"><i class="icon-dribbble-with-circle"></i></a></li>
+									<li><a href="login.html">Admin Login</a></li>
 								</ul>
 							</div>
 						</div>
@@ -106,6 +92,7 @@
 			</div>
 			<br>
 			<br>
+																<!--LOGO SECTION-->
 			<div class="row">
 				<div class="col-xs-12 text-center menu-2">
 					<div id="fh5co-logo">
@@ -120,9 +107,11 @@
 			</div>
 		</div>
 	</nav>
+																	<!--HOME SECTION 
+														(1st section on the page: BLOGS -> to the blog.html)-->
 
 	<aside id="fh5co-hero">
-		<div class="container">
+		<div id = "home" class="container">
 			<div class="row">
 				<div class="col-md-8">
 					<div class="flexslider animate-box">
@@ -191,9 +180,9 @@
 			</div>
 		</div>
 	</aside>
-
+																<!--POPULAR PRODUCTS SECTION-->
 	<div id="fh5co-blog-popular">
-		<div class="container">
+		<div id="products" class="container">
 			<div class="row animate-box">
 				<div class="col-md-12 col-md-offset-0 text-center fh5co-heading">
 					<h2><span>Popular Post</span></h2>
@@ -235,7 +224,8 @@
 			</div>
 		</div>
 	</div>
-
+																<!--DOCTORS/TREATMANS/
+																	can be OUR RECOMENDATION SECTION (for treatmans and doctors)-->
 	<div id="fh5co-content">
 		<div class="container">
 			<div class="row">
@@ -245,10 +235,10 @@
 							<div class="fh5co-blog animate-box">
 								<div class="title title-pin text-center">
 									<span class="posted-on">Nov. 15th 2016</span>
-									<h3><a href="#">Modeling &amp; Stylist in USA</a></h3>
+									<h3><a href="blog.html">Modeling &amp; Stylist in USA</a></h3>
 									<span class="category">Lifestyle</span>
 								</div>
-								<a href="#"><img class="img-responsive" src="images/blog-1.jpg" alt=""></a>
+								<a href="blog.html"><img class="img-responsive" src="images/blog-1.jpg" alt=""></a>
 								<div class="blog-text text-center">
 									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius. Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
 									<ul class="fh5co-social-icons">
@@ -343,16 +333,42 @@
 						</div>
 					</div>
 				</div>
-				
+																<!--SIDEBAR SECTION-->
+
+																<!--ABOUT US SECTION-->
 				<aside id="sidebar">
-					<div class="col-md-3">
+					<div id="about" class="col-md-3">
 						<div class="side animate-box">
 							<div class="col-md-12 col-md-offset-0 text-center fh5co-heading fh5co-heading-sidebar">
-								<h2><span>About Me</span></h2>
+								<h2><span>About Us</span></h2>
 							</div>
 							<div class="fh5co-staff">
 								<img src="images/user-2.jpg" alt="Free HTML5 Templates by FreeHTML5.co">
-								<h3>Jean Smith</h3>
+								<h3>Ajla Selimovic</h3>
+								<strong class="role">CEO, Founder</strong>
+								<p>Quos quia provident conse culpa facere ratione maxime commodi voluptates id repellat velit eaque aspernatur expedita.</p>
+								<ul class="fh5co-social-icons">
+									<li><a href="#"><i class="icon-facebook"></i></a></li>
+									<li><a href="#"><i class="icon-twitter"></i></a></li>
+									<li><a href="#"><i class="icon-dribbble"></i></a></li>
+									<li><a href="#"><i class="icon-github"></i></a></li>
+								</ul>
+							</div>
+							<div class="fh5co-staff">
+								<img src="images/user-2.jpg" alt="Free HTML5 Templates by FreeHTML5.co">
+								<h3>Iman Lukomirak</h3>
+								<strong class="role">CEO, Founder</strong>
+								<p>Quos quia provident conse culpa facere ratione maxime commodi voluptates id repellat velit eaque aspernatur expedita.</p>
+								<ul class="fh5co-social-icons">
+									<li><a href="#"><i class="icon-facebook"></i></a></li>
+									<li><a href="#"><i class="icon-twitter"></i></a></li>
+									<li><a href="#"><i class="icon-dribbble"></i></a></li>
+									<li><a href="#"><i class="icon-github"></i></a></li>
+								</ul>
+							</div>
+							<div class="fh5co-staff">
+								<img src="images/user-2.jpg" alt="Free HTML5 Templates by FreeHTML5.co">
+								<h3>Merjema Mujic</h3>
 								<strong class="role">CEO, Founder</strong>
 								<p>Quos quia provident conse culpa facere ratione maxime commodi voluptates id repellat velit eaque aspernatur expedita.</p>
 								<ul class="fh5co-social-icons">
@@ -363,6 +379,8 @@
 								</ul>
 							</div>
 						</div>
+																			<!--LATEST POSTS SECTION-->
+
 						<div class="side animate-box">
 							<div class="col-md-12 col-md-offset-0 text-center fh5co-heading fh5co-heading-sidebar">
 								<h2><span>Latest Posts</span></h2>
@@ -395,6 +413,8 @@
 								</a>
 							</div>
 						</div>
+																<!--CATEGORY SECTION-->
+
 						<div class="side animate-box">
 							<div class="col-md-12 col-md-offset-0 text-center fh5co-heading fh5co-heading-sidebar">
 								<h2><span>Category</span></h2>
@@ -408,25 +428,13 @@
 								<li><a href="#"><i class="icon-check"></i>Entertainment</a></li>
 							</ul>
 						</div>
-						<div class="side animate-box">
-							<div class="col-md-12 col-md-offset-0 text-center fh5co-heading fh5co-heading-sidebar">
-								<h2><span>Intagram</span></h2>
-								<!--Ovdje da bude strucna pomoc th doktori ili tipa neki preporuceni tretmani/saloni sth like that i onda to kad se klikne vodi te dole na dno stranice i tu su insta posts, tu cemo staviti te doktore/tretmane/salone-->
-							</div>
-							<div class="row">
-								<div class="col-md-12">
-									<div class="insta" style="background-image: url(images/insta-1.jpg);">
-										
-									</div>
-								</div>
-							</div>
-						</div>
 					</div>
 				</aside>
-
 			</div>
 		</div>
 	</div>
+																<!--INSTAGRAM POSTS SECTION-->
+												<!--can be some products gallery section, can be contact section-->
 
 	<div id="fh5co-instagram">
 		<div class="container">
@@ -451,7 +459,7 @@
 			</div>
 		</div>
 	</div>
-
+																<!--FOOTER SECTION-->
 	<footer id="fh5co-footer" role="contentinfo">
 		<div class="container">
 			<div class="row row-pb-md">

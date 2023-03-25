@@ -214,7 +214,7 @@ figure {
   color: black;
 }
 
-.fh5co-nav ul li.has-dropdown {
+/* .fh5co-nav ul li.has-dropdown {
   position: relative;
 }
 
@@ -281,7 +281,7 @@ figure {
 .fh5co-nav ul li.has-dropdown:hover a,
 .fh5co-nav ul li.has-dropdown:focus a {
   color: #000;
-}
+} */
 
 .fh5co-nav ul li.btn-cta a {
   padding: 30px 0px !important;
@@ -341,12 +341,13 @@ figure {
   padding: inherit;
   padding-left: 5px;
   padding-right: 5px;
+  color: #FBF2EB;
 }
 
-.fh5co-nav .fh5co-social-icons li a i {
+/* .fh5co-nav .fh5co-social-icons li a i {
   font-size: 18px;
   color: #000;
-}
+} */
 
 #fh5co-counter,
 .fh5co-bg,
