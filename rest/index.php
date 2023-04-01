@@ -4,63 +4,50 @@ require "dao/AdminsDao.class.php";
 
 Flight::register('admin_dao', "AdminsDao");
 
+/*This is default route that runs in the browser */
 Flight::route("/", function () {
     echo "Hello from / route";
 });
 
 Flight::route("GET /admins", function () {
-    //echo "Hello from /admins route";
-    //$admin_dao = new AdminsDao();
-    //$results = Flight::admin_dao()->get_all();
-    //print_r($results);
-
     Flight::json(Flight::admin_dao()->get_all());
+
 });
 
-Flight::route("GET /admins_by_id", function () {
-    Flight::json(Flight::admin_dao()->get_by_id(Flight::request()->query['id_admin']));
-});
-
-Flight::route("GET /admins/@id_admin", function ($id) {
-    //echo "Hello from /admins route";
-    //$admin_dao = new AdminsDao();
-    //$results = $admin_dao->get_by_id($id);
-    //print_r($results);
+Flight::route("GET /admins/@id", function ($id) {
     Flight::json(Flight::admin_dao()->get_by_id($id));
 });
 
-Flight::route("DELETE /admins/@id_admin", function ($id) {
-    //echo "Hello from /admins route";
-    //$admin_dao = new AdminsDao();
-
+Flight::route("DELETE /admins/@id", function ($id) {
     Flight::admin_dao()->delete($id);
     Flight::json(['message' => "Admin deleted successfully"]);
 });
 
 Flight::route("POST /admin", function () {
-
-    //echo "Hello from /admins route";
-    //$admin_dao = new AdminsDao();
-
     $request = Flight::request()->data->getData();
-    //$response = $admin_dao->add($request);
-
     Flight::json([
         'message' => "Admin added successfully",
         'data' => Flight::admin_dao()->add($request)
     ]);
 });
 
-Flight::route("PUT /admin/@id_admin", function ($id) {
+Flight::route("GET /admin_by_id", function () {
+    /*We need to provide id in the url for this method, ex /12 */
 
-    //echo "Hello from /admins route";
-    //$admin_dao = new AdminsDao();
+    //$id = Flight::request()->query['id'];
+    //Flight::json(Flight::admin_dao()->get_by_id($id));
 
+        Flight::json(
+          Flight::admin_dao()->get_by_id(
+            Flight::request()->query['id']
+      )
+    );
+});
+
+Flight::route("PUT /admin/@id", function ($id) {
     $admin = Flight::request()->data->getData();
-
-    //$response = $admin_dao->update($admin, $id);
+    //?id=12 in url
     Flight::json([
-
         'message' => "Admin edited successfully",
         'data' => Flight::admin_dao()->update($admin, $id)
     ]);

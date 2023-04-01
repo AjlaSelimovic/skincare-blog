@@ -44,8 +44,8 @@ class AdminsDao
     /*Get admins by id */
     public function get_by_id($id)
     {
-        $stmt = $this->conn->prepare("SELECT * FROM admins WHERE id = :id_admin");
-        $stmt->execute(['id_admin' => $id]);
+        $stmt = $this->conn->prepare("SELECT * FROM admins WHERE id = :id");
+        $stmt->execute(['id' => $id]);
         return $stmt->fetchAll();
     }
 
@@ -55,18 +55,19 @@ class AdminsDao
     /* This will be for taking the data from input forms where we have different informations */
     /* We pass here array, the array will collent all info from the frontend, we don't need to write them separatelly*/
     {
-        $stmt = $this->conn->prepare("INSERT INTO admins (username, password) VALUES (':username', ':password')");
+        $stmt = $this->conn->prepare("INSERT INTO admins (username, password) VALUES (:username, :password)");
         $stmt->execute($admin);
-        /*Bind or assign values: this is assigning (this id_Admin is placeholder for id) */
-        $admin['id_admin'] = $this->conn->lastInsertId();
+        /*Bind or assign values: this is assigning (this id is placeholder for id) */
+        $admin['id'] = $this->conn->lastInsertId();
+        /*It will return us the id of the last inserted record in the table */
         return $admin;
     }
 
     /* Method used to get update admin from database     */
     public function update($admin, $id)
     {
-        $admin['id_admin'] = $id;
-        $stmt = $this->conn->prepare("UPDATE admins SET username = ':username', password = ':password', WHERE id = :id_admin");
+        $admin['id'] = $id;
+        $stmt = $this->conn->prepare("UPDATE admins SET username = :username, password = :password WHERE id = :id");
         $stmt->execute($admin);
         return $admin;
     }
@@ -74,8 +75,8 @@ class AdminsDao
     /*Method for deleting the record (admin from db): */
     public function delete($id)
     {
-        $stmt = $this->conn->prepare("DELETE FROM admins WHERE id = :id_admin");
-        $stmt->bindParam(':id_admin', $id);
+        $stmt = $this->conn->prepare("DELETE FROM admins WHERE id = :id");
+        $stmt->bindParam(':id', $id);
         $stmt->execute();
     }
 }

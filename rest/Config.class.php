@@ -4,7 +4,7 @@ class Config
 {
     public static function DB_HOST()
     {
-        return 'localhost:3306';
+        return 'localhost';
     }
 
     public static function DB_USERNAME()
@@ -14,7 +14,7 @@ class Config
 
     public static function DB_PASSWORD()
     {
-        return 'obozavamportu';
+        return 'mema2508';
     }
 
     public static function DB_SCHEMA()
