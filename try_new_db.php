@@ -11,9 +11,9 @@ try {
 
     // set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql = "DELETE FROM admins WHERE id = 12";
+    $sql = "DELETE FROM admins WHERE id = 9";
     $conn->exec($sql);
-    echo "New record has been deleted";
+    echo "Another record has been deleted";
 
     // echo "Connected successfully";
 
