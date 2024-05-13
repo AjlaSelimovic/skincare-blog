@@ -1,5 +1,6 @@
 <?php 
 
+<<<<<<< HEAD
 /**
  * @OA\Post(
  *      path="/products/add",
@@ -52,12 +53,15 @@
  *      )
  * )
  */
+=======
+>>>>>>> 26b0542b2a9824839738183c2e3325e85daa1ac0
 Flight::route('POST /products/add', function(){
     $data = Flight::request()->data->getData();
     Flight::productService()->add_product($data);
     Flight::json(["message"=> "Product added successfully"]);
 });
 
+<<<<<<< HEAD
 /**
  * @OA\Get(
  *      path="/products/{product_id}",
@@ -107,10 +111,13 @@ Flight::route('POST /products/add', function(){
  *      )
  * )
  */
+=======
+>>>>>>> 26b0542b2a9824839738183c2e3325e85daa1ac0
 Flight::route('GET /products/@product_id', function($product_id){
     Flight::json(Flight::productService()->get_product_by_id($product_id));
 });
 
+<<<<<<< HEAD
 /**
  * @OA\Get(
  *      path="/products",
@@ -154,10 +161,13 @@ Flight::route('GET /products/@product_id', function($product_id){
  *      )
  * )
  */
+=======
+>>>>>>> 26b0542b2a9824839738183c2e3325e85daa1ac0
 Flight::route('GET /products', function(){
     Flight::json(Flight::productService()->get_all_products());
 });
 
+<<<<<<< HEAD
 /**
  * @OA\Put(
  *      path="/products/{product_id}",
@@ -214,12 +224,15 @@ Flight::route('GET /products', function(){
  *      )
  * )
  */
+=======
+>>>>>>> 26b0542b2a9824839738183c2e3325e85daa1ac0
 Flight::route('PUT /products/@product_id', function($product_id){
     $data = Flight::request()->data->getData();
     Flight::productService()->update_product($product_id, $data);
     Flight::json(["message"=> "Product updated successfully"]);
 });
 
+<<<<<<< HEAD
 /**
  * @OA\Delete(
  *      path="/products/{product_id}",
@@ -247,9 +260,16 @@ Flight::route('PUT /products/@product_id', function($product_id){
  *      )
  * )
  */
+=======
+>>>>>>> 26b0542b2a9824839738183c2e3325e85daa1ac0
 Flight::route('DELETE /products/@product_id', function($product_id){
     Flight::productService()->delete_product($product_id);
     Flight::json(["message"=> "Product deleted successfully"]);
 });
+<<<<<<< HEAD
 ?>
 
+=======
+
+?>
+>>>>>>> 26b0542b2a9824839738183c2e3325e85daa1ac0

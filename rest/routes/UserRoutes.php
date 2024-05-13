@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 use Firebase\JWT\JWT;
 
@@ -112,6 +113,18 @@ Flight::route('POST /users/register', function(){
  */
 
  Flight::route('POST /users/login', function(){
+=======
+<?php 
+
+Flight::route('POST /users/register', function(){
+    $data= Flight::request()->data->getData();
+    Flight::userService()->register($data);
+    Flight::json(["message"=> "You are registrated"]);
+
+});
+
+Flight::route('POST /users/login', function(){
+>>>>>>> 26b0542b2a9824839738183c2e3325e85daa1ac0
     $data = Flight::request()->data->getData();
     try {
         $token = Flight::userService()->login($data);
@@ -120,6 +133,7 @@ Flight::route('POST /users/register', function(){
     }
 });
 
+<<<<<<< HEAD
 /**
  * @OA\Get(
  *      path="/users/confirm/{token}",
@@ -141,10 +155,15 @@ Flight::route('POST /users/register', function(){
  * )
  */
 Flight::route('GET /users/confirm/{token}', function($token){
+=======
+
+Flight::route('GET /users/confirm/@token', function($token){
+>>>>>>> 26b0542b2a9824839738183c2e3325e85daa1ac0
     Flight::userService()->confirm($token);
     Flight::json(["message" => "Token is valid"]);
 });
 
+<<<<<<< HEAD
 /**
  * @OA\Get(
  *      path="/users/{id}",
@@ -171,3 +190,11 @@ Flight::route('GET /users/{id}', function($id){
 
 ?>
 
+=======
+
+Flight::route('GET /users/@id', function($id){
+    Flight::json(Flight::userService()->get_by_id($id));
+});
+
+?>
+>>>>>>> 26b0542b2a9824839738183c2e3325e85daa1ac0

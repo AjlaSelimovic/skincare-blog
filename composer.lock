@@ -4,6 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
     "content-hash": "586d2ff86d5513753fef48da8e9208cb",
     "packages": [
         {
@@ -280,6 +281,20 @@
             },
             "dist": {
                 "type": "zip",
+=======
+    "content-hash": "eda44f6ae43c76d8caf02af35ddb2680",
+    "packages": [
+        {
+            "name": "flightphp/core",
+            "version": "v3.8.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/flightphp/core.git",
+                "reference": "0011efd42c40f4c600612e425ad598ec8cd6bae7"
+            },
+            "dist": {
+                "type": "zip",
+>>>>>>> 26b0542b2a9824839738183c2e3325e85daa1ac0
                 "url": "https://api.github.com/repos/flightphp/core/zipball/0011efd42c40f4c600612e425ad598ec8cd6bae7",
                 "reference": "0011efd42c40f4c600612e425ad598ec8cd6bae7",
                 "shasum": ""
@@ -342,6 +357,7 @@
                 "source": "https://github.com/flightphp/core/tree/v3.8.1"
             },
             "time": "2024-04-11T04:28:40+00:00"
+<<<<<<< HEAD
         },
         {
             "name": "psr/cache",
@@ -728,6 +744,8 @@
                 "source": "https://github.com/zircote/swagger-php/tree/3.3.7"
             },
             "time": "2023-01-03T21:17:10+00:00"
+=======
+>>>>>>> 26b0542b2a9824839738183c2e3325e85daa1ac0
         }
     ],
     "packages-dev": [],
