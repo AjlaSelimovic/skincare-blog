@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+</head>
+<body>
+    <h1>Product List</h1>
+    <div id="product-list"></div>
+
+    <h2>Add New Product</h2>
+    <form id="add-product-form">
+        <label for="product_name">Product Name:</label><br>
+        <input type="text" id="product_name" name="product_name"><br>
+        <label for="product_id">Product ID:</label><br>
+        <input type="text" id="product_id" name="product_id"><br>
+        <label for="brand">Brand:</label><br>
+        <input type="text" id="brand" name="brand"><br>
+        <label for="price">Price: Decimal only</label><br>
+        <input type="text" id="price" name="price"><br>
+        <label for="description">Description:</label><br>
+        <textarea id="description" name="description"></textarea><br>
+        <button type="submit">Add Product</button>
+    </form>
+
+    <script>
+        // Function to make an AJAX request
+        function fetchProducts() {
+            // Make a GET request to fetch products from the backend
+            fetch('http://localhost/skincare-blog/rest/products/', {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Call function to render product data
+                renderProducts(data);
+            })
+            .catch(error => console.error('Error fetching products:', error));
+        }
+
+        // Function to render product data
+        function renderProducts(products) {
+            const productListDiv = document.getElementById('product-list');
+
+            // Clear any existing content
+            productListDiv.innerHTML = '';
+
+            // Loop through the products and create HTML elements to display them
+            products.forEach(product => {
+                const productDiv = document.createElement('div');
+                productDiv.innerHTML = `
+                    <h2>${product.product_name}</h2>
+                    <h2>${product.product_id}</h2>
+                    <p><strong>Brand:</strong> ${product.brand}</p>
+                    <p><strong>Price:</strong> $${product.price}</p>
+                    <p><strong>Description:</strong> ${product.description}</p>
+                    <button onclick="editProduct(${product.product_id})">Edit</button>
+                    <button onclick="deleteProduct(${product.product_id})">Delete</button>
+                    <hr>
+                `;
+                productListDiv.appendChild(productDiv);
+            });
+        }
+
+        // Function to add a new product
+        function addProduct(event) {
+            event.preventDefault();
+            const formData = new FormData(document.getElementById('add-product-form'));
+            fetch('http://localhost/skincare-blog/rest/products/add', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(Object.fromEntries(formData)),
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                fetchProducts(); // Refresh product list after adding a new product
+            })
+            .catch(error => console.error('Error adding product:', error));
+        }
+
+        // Function to delete a product
+        function deleteProduct(productId) {
+            if (confirm('Are you sure you want to delete this product?')) {
+                fetch(`http://localhost/skincare-blog/rest/products/${productId}`, {
+                    method: 'DELETE',
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                    fetchProducts(); // Refresh product list after deleting a product
+                })
+                .catch(error => console.error('Error deleting product:', error));
+            }
+        }
+
+        // Function to edit a product
+        function editProduct(productId) {
+            // Implement edit functionality as needed
+            console.log(`Edit product with ID ${productId}`);
+        }
+
+        // Event listener for form submission
+        document.getElementById('add-product-form').addEventListener('submit', addProduct);
+
+        // Call fetchProducts function when the page loads
+        window.onload = fetchProducts;
+    </script>
+</body>
+</html>
