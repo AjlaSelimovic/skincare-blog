@@ -1,5 +1,11 @@
 {
     "require": {
+<<<<<<< HEAD
+        "flightphp/core": "^3.8",
+        "zircote/swagger-php": "3.3.7",
+        "firebase/php-jwt": "^6.10"
+=======
         "flightphp/core": "^3.8"
+>>>>>>> 26b0542b2a9824839738183c2e3325e85daa1ac0
     }
 }

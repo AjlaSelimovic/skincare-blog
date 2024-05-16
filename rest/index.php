@@ -21,6 +21,11 @@ Flight::map('query', function($name, $default_value = NULL){
   return $query_param;
 });
 
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> 26b0542b2a9824839738183c2e3325e85daa1ac0
 /* Register Business Logic layer services */
 Flight::register('userService', 'UserService');
 Flight::register('productService', 'ProductService');
